@@ -1,8 +1,9 @@
 "use client";
 
+import React from 'react';
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
-export default function TypewriterText(): JSX.Element {
+export default function TypewriterText(): React.ReactElement {
   const [text] = useTypewriter({
     words: ["Eat Nori", "Laugh a Lot", "Spread Love"],
     loop: true, // Optional config    
