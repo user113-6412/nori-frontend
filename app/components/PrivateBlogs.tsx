@@ -24,36 +24,36 @@ export default function PrivateBlogs() {
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
 
   useEffect(() => {
+    async function fnFetchPrivateBlogs() {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
+          credentials: 'include',
+          headers: {
+            'Authorization': `Bearer ${user?.token}`
+          }
+        });
+        if (!res.ok) throw new Error('Failed to fetch blogs');
+        const data = await res.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+    };
     fnFetchPrivateBlogs();
-  }, []);
+  }, [user]);
 
-  async function fnFetchPrivateBlogs() {
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
-        credentials: 'include',
-        headers: {
-          'Authorization': `Bearer ${user.token}`
-        }
-      });
-      if (!res.ok) throw new Error('Failed to fetch blogs');
-      const data = await res.json();
-      setBlogs(data);
-    } catch (error) {
-      console.error('Error fetching blogs:', error);
-    }
-  };
+  
 
   async function fnHandleCreateBlog(e: React.FormEvent) {
     e.preventDefault();
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}` },
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user?.token}` },
         credentials: 'include',
         body: JSON.stringify(newBlog)
       });
       if (!res.ok) throw new Error('Failed to create blog');
-      await fnFetchPrivateBlogs();
       setIsCreating(false);
       setNewBlog({ title: '', content: '', authorName: '', isPrivate: true });
     } catch (error) {
@@ -67,12 +67,11 @@ export default function PrivateBlogs() {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog/${editingBlog.id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}` },
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user?.token}` },
         credentials: 'include',
         body: JSON.stringify(editingBlog)
       });
       if (!res.ok) throw new Error('Failed to update blog');
-      await fnFetchPrivateBlogs();
       setEditingBlog(null);
     } catch (error) {
       console.error('Error updating blog:', error);
@@ -84,10 +83,9 @@ export default function PrivateBlogs() {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog/${id}`, {
         method: 'DELETE',
         credentials: 'include',
-        headers: { 'Authorization': `Bearer ${user.token}` }
+        headers: { 'Authorization': `Bearer ${user?.token}` }
       });
       if (!res.ok) throw new Error('Failed to delete blog');
-      await fnFetchPrivateBlogs();
     } catch (error) {
       console.error('Error deleting blog:', error);
     }
@@ -97,12 +95,11 @@ export default function PrivateBlogs() {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog/${blog.id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}` },
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user?.token}` },
         credentials: 'include',
         body: JSON.stringify({ ...blog, isPrivate: !blog.isPrivate })
       });
       if (!res.ok) throw new Error('Failed to update blog privacy');
-      await fnFetchPrivateBlogs();
     } catch (error) {
       console.error('Error updating blog privacy:', error);
     }

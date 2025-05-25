@@ -80,7 +80,7 @@ export default function ChatBot() {
         message: messageWithContext,
       });
 
-      const botReply = result.text;
+      const botReply = result.text || "Sorry, I couldn't process that request. 🍣";
       setMessages((prev) => [...prev, { role: 'model', content: botReply }]);
     } catch (error) {
       console.error('Chatbot error:', error);
