@@ -1,8 +1,7 @@
 async function fnGetSingleBlogById(id: string) {
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog/public/${id}`, {
-          cache:
-          "no-store",
+          cache: "no-store",
         });
     
         if(!res.ok) {
@@ -17,16 +16,10 @@ async function fnGetSingleBlogById(id: string) {
       }
 }
 
-
-export default async function BlogDetails({params}: {params: {id: string}}) {
+export default async function BlogDetails({ params }: { params: Promise<{ id: string }> }) {
     const resolvedParams = await params;
     const { id } = resolvedParams;
-  
-    // destructuring after parsing finished
-    const blog = await fnGetSingleBlogById(id)
-    console.log("id received from params", id)
-    console.log("blog received from api", blog)
-
+    const blog = await fnGetSingleBlogById(id);
 
     return (
         <>
