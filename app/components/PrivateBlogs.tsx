@@ -24,21 +24,21 @@ export default function PrivateBlogs() {
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
 
   useEffect(() => {
-    async function fnFetchPrivateBlogs() {
-      try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
-          credentials: 'include',
-          headers: {
+  async function fnFetchPrivateBlogs() {
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
+        credentials: 'include',
+        headers: {
             'Authorization': `Bearer ${user?.token}`
-          }
-        });
-        if (!res.ok) throw new Error('Failed to fetch blogs');
-        const data = await res.json();
-        setBlogs(data);
-      } catch (error) {
-        console.error('Error fetching blogs:', error);
-      }
-    };
+        }
+      });
+      if (!res.ok) throw new Error('Failed to fetch blogs');
+      const data = await res.json();
+      setBlogs(data);
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
+    }
+  };
     fnFetchPrivateBlogs();
   }, [user]);
 
