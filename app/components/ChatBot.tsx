@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI, Chat } from '@google/genai';
 import ReactMarkdown from 'react-markdown';
 
 interface Message {
@@ -26,7 +26,7 @@ export default function ChatBot() {
   const [isLoading, setIsLoading] = useState(false);
   const [isChatVisible, setIsChatVisible] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const chatRef = useRef<any>(null);
+  const chatRef = useRef<Chat | null>(null);
 
   const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
   const genAI = new GoogleGenAI({ apiKey });
