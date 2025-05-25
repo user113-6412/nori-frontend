@@ -1,11 +1,11 @@
 "use client"
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { useSignUp } from "../authHooks/useSignup"
 import Link from "next/link"
 import SVGeyeOpened from "../components/SVGeyeOpened"
 import SVGeyeClosed from "../components/SVGeyeClosed"
 
-export default function Signup() {
+function SignupContent() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
@@ -91,5 +91,13 @@ export default function Signup() {
                 </div>
             </div>
         </div>
+    )
+}
+
+export default function Signup() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <SignupContent />
+        </Suspense>
     )
 }
