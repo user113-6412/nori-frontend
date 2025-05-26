@@ -39,7 +39,7 @@ export function useLogin() {
 
             console.log('VJ user and token received by frontend');
 
-            router.push('/nori-tracker');
+            router.push('/blog');
 
         } catch (err) {
             setIsLoading(false);
