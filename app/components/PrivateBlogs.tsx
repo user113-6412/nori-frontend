@@ -292,7 +292,7 @@ export default function PrivateBlogs() {
         {blogs.map((blog) => (
           <article key={blog.id} className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
-            <p className="text-gray-600 mb-4">{blog.content}</p>
+            <div className="text-gray-600 mb-4 whitespace-pre-wrap">{blog.content}</div>
             <div className="flex justify-between items-center text-sm text-gray-500">
               <span>By {blog.authorName + " "}</span>
               <span>{new Date(blog.createdAt).toLocaleDateString()}</span>

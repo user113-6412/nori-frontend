@@ -26,7 +26,7 @@ export default async function BlogDetails({ params }: { params: Promise<{ id: st
         {blog? (
         <main className="min-h-screen p-4 max-w-4xl mx-auto flex flex-col items-center">
             <h1 className="text-3xl font-bold justify-center text-center mb-8">{blog.title}</h1>
-            <div className="text-gray-600 mb-4 w-full">
+            <div className="text-gray-600 mb-4 w-full whitespace-pre-wrap">
                 {blog.content.split("\n\n").map((para: string, index: number) => (
                     <p key={index} className="mb-4">
                     {para.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
