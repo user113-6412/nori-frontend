@@ -33,6 +33,12 @@ export default function PrivateBlogs() {
         }
       });
       if (!res.ok) throw new Error('Failed to fetch blogs');
+      if (res.status === 401) {
+        console.warn("Unauthorized access, logging out.");
+        localStorage.removeItem("user"); // Remove user from localStorage
+        fnStateLoggedOut(); // Update state to logged out
+        return; // Exit the function
+      }
       const data = await res.json();
       setBlogs(data);
     } catch (error) {
