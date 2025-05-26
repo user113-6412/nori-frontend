@@ -1,3 +1,4 @@
+import PrivateBlogs from "../components/PrivateBlogs";
 import PublicBlogs from "../components/PublicBlogs";
 
 
@@ -21,6 +22,10 @@ export default async function Blog() {
       
         <section className="mb-12">
           <PublicBlogs initialBlogs={publicBlogs} /> {/* Pass public blogs as a prop to PublicBlogs component */}
+        </section>
+
+        <section className="mb-12">
+          <PrivateBlogs />
         </section>
     
       
