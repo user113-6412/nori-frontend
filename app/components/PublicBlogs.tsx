@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link';
 import { useAuthContext } from '../authHooks/useAuthContext';
-import PrivateBlogs from './PrivateBlogs';
 
 interface Blog {
   id: number;
