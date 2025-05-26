@@ -1,4 +1,3 @@
-import PrivateBlogs from "../components/PrivateBlogs";
 import PublicBlogs from "../components/PublicBlogs";
 
 
