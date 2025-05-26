@@ -50,6 +50,8 @@ export default function DashboardNavBar() {
               <>
                 <Link href="/login" className="text-gray-600 hover:text-gray-900">Login</Link>
                 <Link href="/signup" className="text-gray-600 hover:text-gray-900">Signup</Link>
+                <Link href="/blog" className="text-gray-600 hover:text-gray-900">Blog</Link>
+                <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Tracker</Link>
               </>
             )}
           </div>
@@ -86,7 +88,10 @@ export default function DashboardNavBar() {
                 <>
                   <Link href="/login" className="text-gray-600 hover:text-gray-900">Login</Link>
                   <Link href="/signup" className="text-gray-600 hover:text-gray-900">Signup</Link>
+                  <Link href="/blog" className="text-gray-600 hover:text-gray-900">Blog</Link>
+                  <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Tracker</Link>
                 </>
+
               )}
             </div>
           </div>
