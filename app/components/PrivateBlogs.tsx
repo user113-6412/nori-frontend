@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useAuthContext } from '../authHooks/useAuthContext';
+import Link from 'next/link';
 interface Blog {
   id: number;
   title: string;
@@ -115,12 +116,20 @@ export default function PrivateBlogs() {
     <div className="space-y-8">
       {/* Create New Blog Button */}
       <div className="flex justify-center">
-        <button
-          onClick={() => setIsCreating(true)}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Create New Blog
-        </button>
+        {user ? (
+          <button
+            onClick={() => setIsCreating(true)}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Create New Blog
+          </button>
+        ) : (
+          <Link href="/login">
+            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+              Login to Post
+            </button>
+          </Link>
+        )}
       </div>
 
       {/* Create Blog Form */}

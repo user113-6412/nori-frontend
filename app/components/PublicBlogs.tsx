@@ -42,12 +42,8 @@ export default function PublicBlogs({ initialBlogs }: PublicBlogsProps) {
             </article>
           ))}
         </div>
-
       )}
 
-      {user && (
-        <PrivateBlogs />
-      )}
 
     </>
   );
