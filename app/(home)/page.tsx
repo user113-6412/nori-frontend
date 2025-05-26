@@ -24,7 +24,7 @@ export default function Home() {
             <div className="max-w-2xl mx-auto w-full py-2">
                 <Link href={amazonURL} target="_blank">
                     <button className="w-full text-2xl font-bold text-white p-4 rounded-lg bg-yellow-500 hover:cursor-pointer">
-                        Buy our Nori on Amazon
+                        Buy our Nori on Amazon!
                     </button>
                 </Link>
             </div>
