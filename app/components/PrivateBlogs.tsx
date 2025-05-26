@@ -60,6 +60,12 @@ export default function PrivateBlogs() {
         body: JSON.stringify(newBlog)
       });
       if (!res.ok) throw new Error('Failed to create blog');
+      if (res.status === 401) {
+        console.warn("Unauthorized access, logging out.");
+        localStorage.removeItem("user"); // Remove user from localStorage
+        fnStateLoggedOut(); // Update state to logged out
+        return; // Exit the function
+      }
       const createdBlog = await res.json();
       setBlogs(prev => [...prev, createdBlog]);
       setIsCreating(false);
@@ -80,6 +86,12 @@ export default function PrivateBlogs() {
         body: JSON.stringify(editingBlog)
       });
       if (!res.ok) throw new Error('Failed to update blog');
+      if (res.status === 401) {
+        console.warn("Unauthorized access, logging out.");
+        localStorage.removeItem("user"); // Remove user from localStorage
+        fnStateLoggedOut(); // Update state to logged out
+        return; // Exit the function
+      }
       const updatedBlog = await res.json();
       setBlogs(prev => prev.map(blog => blog.id === updatedBlog.id ? updatedBlog : blog));
       setEditingBlog(null);
@@ -96,6 +108,12 @@ export default function PrivateBlogs() {
         headers: { 'Authorization': `Bearer ${user?.token}` }
       });
       if (!res.ok) throw new Error('Failed to delete blog');
+      if (res.status === 401) {
+        console.warn("Unauthorized access, logging out.");
+        localStorage.removeItem("user"); // Remove user from localStorage
+        fnStateLoggedOut(); // Update state to logged out
+        return; // Exit the function
+      }
       setBlogs(prev => prev.filter(blog => blog.id !== id));
     } catch (error) {
       console.error('Error deleting blog:', error);
@@ -111,6 +129,12 @@ export default function PrivateBlogs() {
         body: JSON.stringify({ ...blog, isPrivate: !blog.isPrivate })
       });
       if (!res.ok) throw new Error('Failed to update blog privacy');
+      if (res.status === 401) {
+        console.warn("Unauthorized access, logging out.");
+        localStorage.removeItem("user"); // Remove user from localStorage
+        fnStateLoggedOut(); // Update state to logged out
+        return; // Exit the function
+      }
       const updatedBlog = await res.json();
       setBlogs(prev => prev.map(b => b.id === updatedBlog.id ? updatedBlog : b));
     } catch (error) {
@@ -271,7 +295,7 @@ export default function PrivateBlogs() {
               </button>
               <button
                 onClick={() => fnTogglePrivacy(blog)}
-                className={`px-3 py-1 ${
+                className={`px-3 py-1 cursor-pointer ${
                   blog.isPrivate 
                     ? 'text-pink-500 hover:text-pink-600' 
                     : 'text-blue-500 hover:text-blue-600'
