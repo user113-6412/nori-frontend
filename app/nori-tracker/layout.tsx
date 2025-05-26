@@ -1,5 +1,5 @@
 import React from 'react'
-import DashboardNavBar from '../components/DashboardNavBar'
+import DashboardNavBar from '../components/DashboardNavBar';
 import Footer from '../components/Footer';
 
 export default function NoriTrackerLayout({
