@@ -14,7 +14,7 @@ interface Blog {
 
 export default function PrivateBlogs() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
-  const { user } = useAuthContext();
+  const { user, fnStateLoggedOut } = useAuthContext();
   const [isCreating, setIsCreating] = useState(false);
   const [newBlog, setNewBlog] = useState({
     title: '',
@@ -24,13 +24,12 @@ export default function PrivateBlogs() {
   });
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
 
-  useEffect(() => {
   async function fnFetchPrivateBlogs() {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
         credentials: 'include',
         headers: {
-            'Authorization': `Bearer ${user?.token}`
+          'Authorization': `Bearer ${user?.token}`
         }
       });
       if (!res.ok) throw new Error('Failed to fetch blogs');
@@ -39,11 +38,11 @@ export default function PrivateBlogs() {
     } catch (error) {
       console.error('Error fetching blogs:', error);
     }
-  };
-    fnFetchPrivateBlogs();
-  }, [user]);
+  }
 
-  
+  useEffect(() => {
+    fnFetchPrivateBlogs();
+  }, [user, fnStateLoggedOut]);
 
   async function fnHandleCreateBlog(e: React.FormEvent) {
     e.preventDefault();
@@ -55,6 +54,8 @@ export default function PrivateBlogs() {
         body: JSON.stringify(newBlog)
       });
       if (!res.ok) throw new Error('Failed to create blog');
+      const createdBlog = await res.json();
+      setBlogs(prev => [...prev, createdBlog]);
       setIsCreating(false);
       setNewBlog({ title: '', content: '', authorName: '', isPrivate: true });
     } catch (error) {
@@ -73,6 +74,8 @@ export default function PrivateBlogs() {
         body: JSON.stringify(editingBlog)
       });
       if (!res.ok) throw new Error('Failed to update blog');
+      const updatedBlog = await res.json();
+      setBlogs(prev => prev.map(blog => blog.id === updatedBlog.id ? updatedBlog : blog));
       setEditingBlog(null);
     } catch (error) {
       console.error('Error updating blog:', error);
@@ -87,6 +90,7 @@ export default function PrivateBlogs() {
         headers: { 'Authorization': `Bearer ${user?.token}` }
       });
       if (!res.ok) throw new Error('Failed to delete blog');
+      setBlogs(prev => prev.filter(blog => blog.id !== id));
     } catch (error) {
       console.error('Error deleting blog:', error);
     }
@@ -101,16 +105,12 @@ export default function PrivateBlogs() {
         body: JSON.stringify({ ...blog, isPrivate: !blog.isPrivate })
       });
       if (!res.ok) throw new Error('Failed to update blog privacy');
+      const updatedBlog = await res.json();
+      setBlogs(prev => prev.map(b => b.id === updatedBlog.id ? updatedBlog : b));
     } catch (error) {
       console.error('Error updating blog privacy:', error);
     }
   };
-
-
-
-
-
-
 
   return (
     <div className="space-y-8">
