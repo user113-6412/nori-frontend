@@ -48,7 +48,7 @@ export default async function BlogDetails({ params }: { params: Promise<{ id: st
                 ))}
             </div>
             <div className="flex justify-between items-center text-sm text-gray-500">
-                <span>By {blog.authorName}</span>
+                <span>By {blog.authorName}&nbsp;</span>
                 <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
             </div>
         </main>

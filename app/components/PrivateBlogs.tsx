@@ -24,31 +24,34 @@ export default function PrivateBlogs() {
   });
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
 
-  async function fnFetchPrivateBlogs() {
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
-        credentials: 'include',
-        headers: {
-          'Authorization': `Bearer ${user?.token}`
-        }
-      });
-      if (!res.ok) throw new Error('Failed to fetch blogs');
-      if (res.status === 401) {
-        console.warn("Unauthorized access, logging out.");
-        localStorage.removeItem("user"); // Remove user from localStorage
-        fnStateLoggedOut(); // Update state to logged out
-        return; // Exit the function
-      }
-      const data = await res.json();
-      setBlogs(data);
-    } catch (error) {
-      console.error('Error fetching blogs:', error);
-    }
-  }
+  
 
   useEffect(() => {
+    async function fnFetchPrivateBlogs() {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
+          credentials: 'include',
+          headers: {
+            'Authorization': `Bearer ${user?.token}`
+          }
+        });
+        if (!res.ok) throw new Error('Failed to fetch blogs');
+        if (res.status === 401) {
+          console.warn("Unauthorized access, logging out.");
+          localStorage.removeItem("user"); // Remove user from localStorage
+          fnStateLoggedOut(); // Update state to logged out
+          return; // Exit the function
+        }
+        const data = await res.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+    }
     fnFetchPrivateBlogs();
   }, [user, fnStateLoggedOut]);
+
+
 
   async function fnHandleCreateBlog(e: React.FormEvent) {
     e.preventDefault();
@@ -75,6 +78,8 @@ export default function PrivateBlogs() {
     }
   };
 
+
+
   async function fnHandleUpdateBlog(e: React.FormEvent) {
     e.preventDefault();
     if (!editingBlog) return;
@@ -100,6 +105,8 @@ export default function PrivateBlogs() {
     }
   };
 
+
+
   async function fnHandleDeleteBlog(id: number) {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog/${id}`, {
@@ -119,6 +126,8 @@ export default function PrivateBlogs() {
       console.error('Error deleting blog:', error);
     }
   };
+
+
 
   async function fnTogglePrivacy(blog: Blog) {
     try {
@@ -142,9 +151,11 @@ export default function PrivateBlogs() {
     }
   };
 
+
+
   return (
     <div className="space-y-8">
-      {/* Create New Blog Button */}
+      {/* Create New Blog Button or Login Button */}
       <div className="flex justify-center">
         {user ? (
           <button
@@ -283,7 +294,7 @@ export default function PrivateBlogs() {
             <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
             <p className="text-gray-600 mb-4">{blog.content}</p>
             <div className="flex justify-between items-center text-sm text-gray-500">
-              <span>By {blog.authorName}</span>
+              <span>By {blog.authorName + " "}</span>
               <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
             </div>
             <div className="mt-4 flex justify-end space-x-2">

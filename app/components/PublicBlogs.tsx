@@ -34,7 +34,7 @@ export default function PublicBlogs({ initialBlogs }: PublicBlogsProps) {
                 <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
                 <p className="text-gray-600 mb-4">{blog.content}</p>
                 <div className="flex justify-between items-center text-sm text-gray-500">
-                  <span>By {blog.authorName}</span>
+                  <span>By {blog.authorName}&nbsp;</span>
                   <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
                 </div>
               </Link>
