@@ -54,7 +54,7 @@ export default async function BlogDetails({ params }: { params: Promise<{ id: st
         </main>
         ) : (
             <div className="text-center text-gray-500 py-8">
-                <p>Loading the blog...</p>
+                <p>Loading the blogs...</p>
             </div>
         )}
         </>
