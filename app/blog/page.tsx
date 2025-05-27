@@ -1,4 +1,3 @@
-import PrivateBlogs from "../components/PrivateBlogs";
 import PublicBlogs from "../components/PublicBlogs";
 
 async function fnGetPublicBlogs() {
@@ -15,7 +14,6 @@ export default async function Blog() {
   return (
     <main>
       <PublicBlogs initialBlogs={publicBlogs} />
-      <PrivateBlogs />
     </main>
   );
 }

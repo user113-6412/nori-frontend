@@ -27,6 +27,8 @@ export default function PrivateBlogs() {
   
 
   useEffect(() => {
+    if (!user?.token) return; // Don't fetch if no token
+
     async function fnFetchPrivateBlogs() {
       try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
@@ -35,7 +37,7 @@ export default function PrivateBlogs() {
             'Authorization': `Bearer ${user?.token}`
           }
         });
-        if (!res.ok) {console.log("failed to fetch blogs")};
+        if (!res.ok) {console.log("Failed to fetch blogs")};
         if (res.status === 401) {
           console.log("Unauthorized access, logging out.");
           localStorage.removeItem("user"); // Remove user from localStorage
@@ -154,8 +156,8 @@ export default function PrivateBlogs() {
 
 
   return (
-    <section className="w-full px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto">
+    <section className="w-full">
+      <div className="w-full max-w-4xl mx-auto px-1 sm:px-4">
         <div className="space-y-6 sm:space-y-8">
           {/* Create New Blog Button or Login Button */}
           <div className="flex justify-center">
@@ -177,7 +179,7 @@ export default function PrivateBlogs() {
 
           {/* Create Blog Form */}
           {isCreating && (
-            <form onSubmit={fnHandleCreateBlog} className="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
+            <form onSubmit={fnHandleCreateBlog} className="bg-white p-2 sm:p-6 rounded-lg shadow-sm">
               <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-800">Create New Blog</h3>
               <div className="space-y-4">
                 <input
@@ -235,7 +237,7 @@ export default function PrivateBlogs() {
 
           {/* Edit Blog Form */}
           {editingBlog && (
-            <form onSubmit={fnHandleUpdateBlog} className="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
+            <form onSubmit={fnHandleUpdateBlog} className="bg-gray-200 p-2 sm:p-6 rounded-lg shadow-sm">
               <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-800">Edit Blog</h3>
               <div className="space-y-4">
                 <input
@@ -292,15 +294,15 @@ export default function PrivateBlogs() {
           )}
 
           {/* Blog List */}
-          <div className="grid gap-4 sm:gap-6">
+          <div className="grid gap-4 mb-4 sm:gap-6">
             {blogs.map((blog) => (
-              <article key={blog.id} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
-                <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800 line-clamp-2">{blog.title}</h3>
-                  <div className="text-sm sm:text-base text-gray-600 mb-4 whitespace-pre-wrap line-clamp-3">{blog.content}</div>
+              <article key={blog.id} className="bg-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="p-2 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800 break-words">{blog.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4 break-words break-all whitespace-pre-wrap">{blog.content}</p>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs sm:text-sm text-gray-500 space-y-1 sm:space-y-0">
-                    <span className="font-medium">By {blog.authorName}</span>
-                    <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
+                    <span className="font-medium break-words">By {blog.authorName}</span>
+                    <span className="whitespace-nowrap">{new Date(blog.createdAt).toLocaleDateString()}</span>
                   </div>
                   <div className="mt-4 flex flex-wrap justify-end gap-2">
                     <button
@@ -330,6 +332,7 @@ export default function PrivateBlogs() {
               </article>
             ))}
           </div>
+
         </div>
       </div>
     </section>
