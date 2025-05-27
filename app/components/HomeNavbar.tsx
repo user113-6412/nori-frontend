@@ -25,7 +25,7 @@ export default function HomeNavbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex space-x-4">
-            <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Tracker</Link>
+            <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Nori Tracker</Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900">Blog</Link>
             <Link href="/shop-nori" className="text-gray-600 hover:text-gray-900">Shop</Link>
             <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>
@@ -56,7 +56,7 @@ export default function HomeNavbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-[120px] left-0 w-full bg-white shadow-lg py-4">
             <div className="flex flex-col space-y-4 px-4">
-              <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Tracker</Link>
+              <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Nori Tracker</Link>
               <Link href="/blog" className="text-gray-600 hover:text-gray-900">Blog</Link>
               <Link href="/shop-nori" className="text-gray-600 hover:text-gray-900">Shop</Link>
               <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>

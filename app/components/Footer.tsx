@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com/puretide" 
+                href="https://instagram.com/puretidenori" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -28,7 +28,7 @@ export default function Footer() {
                 <i className="fab fa-instagram text-xl"></i>
               </a>
               <a 
-                href="https://tiktok.com/@puretide" 
+                href="https://tiktok.com/@puretide.nori" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
