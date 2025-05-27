@@ -73,10 +73,10 @@ export default function Footer() {
                 London, United Kingdom
               </p>
               <a 
-                href="mailto:hello@puretide.co.uk" 
+                href="mailto:fiasp1creations@gmail.com" 
                 className="text-sm text-gray-600 hover:text-gray-900 block"
               >
-                hello@puretide.co.uk
+                fiasp1creations@gmail.com
               </a>
             </div>
           </div>

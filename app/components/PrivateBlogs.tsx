@@ -154,19 +154,19 @@ export default function PrivateBlogs() {
 
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8 px-4 sm:px-6 md:px-8">
       {/* Create New Blog Button or Login Button */}
       <div className="flex justify-center">
         {user ? (
           <button
             onClick={() => setIsCreating(true)}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 text-sm sm:text-base"
           >
             Create New Blog
           </button>
         ) : (
           <Link href="/login">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 text-sm sm:text-base">
               Login to Post
             </button>
           </Link>
@@ -175,15 +175,15 @@ export default function PrivateBlogs() {
 
       {/* Create Blog Form */}
       {isCreating && (
-        <form onSubmit={fnHandleCreateBlog} className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold mb-4">Create New Blog</h3>
+        <form onSubmit={fnHandleCreateBlog} className="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-800">Create New Blog</h3>
           <div className="space-y-4">
             <input
               type="text"
               placeholder="Author Name"
               value={newBlog.authorName}
               onChange={(e) => setNewBlog({ ...newBlog, authorName: e.target.value })}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded-lg text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             />
             <input
@@ -191,23 +191,24 @@ export default function PrivateBlogs() {
               placeholder="Title"
               value={newBlog.title}
               onChange={(e) => setNewBlog({ ...newBlog, title: e.target.value })}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded-lg text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             />
             <textarea
               placeholder="Content (max 1000 characters)"
               value={newBlog.content}
               onChange={(e) => setNewBlog({ ...newBlog, content: e.target.value.slice(0, 1000) })}
-              className="w-full p-2 border rounded h-32"
+              className="w-full p-2 border rounded-lg h-32 text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               maxLength={1000}
               required
             />
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 text-sm sm:text-base">
               <input
                 type="checkbox"
                 id="isPrivate"
                 checked={newBlog.isPrivate}
                 onChange={(e) => setNewBlog({ ...newBlog, isPrivate: e.target.checked })}
+                className="rounded text-blue-500 focus:ring-blue-500"
               />
               <label htmlFor="isPrivate">Private Post</label>
             </div>
@@ -215,13 +216,13 @@ export default function PrivateBlogs() {
               <button
                 type="button"
                 onClick={() => setIsCreating(false)}
-                className="px-4 py-2 border rounded hover:bg-gray-100"
+                className="px-3 sm:px-4 py-2 border rounded-lg hover:bg-gray-100 text-sm sm:text-base transition-colors duration-200"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                className="px-3 sm:px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-sm sm:text-base transition-colors duration-200"
               >
                 Create
               </button>
@@ -232,15 +233,15 @@ export default function PrivateBlogs() {
 
       {/* Edit Blog Form */}
       {editingBlog && (
-        <form onSubmit={fnHandleUpdateBlog} className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold mb-4">Edit Blog</h3>
+        <form onSubmit={fnHandleUpdateBlog} className="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-800">Edit Blog</h3>
           <div className="space-y-4">
             <input
               type="text"
               placeholder="Author Name"
               value={editingBlog.authorName}
               onChange={(e) => setEditingBlog({ ...editingBlog, authorName: e.target.value })}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded-lg text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             />
             <input
@@ -248,23 +249,24 @@ export default function PrivateBlogs() {
               placeholder="Title"
               value={editingBlog.title}
               onChange={(e) => setEditingBlog({ ...editingBlog, title: e.target.value })}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded-lg text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
             />
             <textarea
               placeholder="Content (max 1000 characters)"
               value={editingBlog.content}
               onChange={(e) => setEditingBlog({ ...editingBlog, content: e.target.value.slice(0, 1000) })}
-              className="w-full p-2 border rounded h-32"
+              className="w-full p-2 border rounded-lg h-32 text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               maxLength={1000}
               required
             />
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 text-sm sm:text-base">
               <input
                 type="checkbox"
                 id="editIsPrivate"
                 checked={editingBlog.isPrivate}
                 onChange={(e) => setEditingBlog({ ...editingBlog, isPrivate: e.target.checked })}
+                className="rounded text-blue-500 focus:ring-blue-500"
               />
               <label htmlFor="editIsPrivate">Private Post</label>
             </div>
@@ -272,13 +274,13 @@ export default function PrivateBlogs() {
               <button
                 type="button"
                 onClick={() => setEditingBlog(null)}
-                className="px-4 py-2 border rounded hover:bg-gray-100"
+                className="px-3 sm:px-4 py-2 border rounded-lg hover:bg-gray-100 text-sm sm:text-base transition-colors duration-200"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                className="px-3 sm:px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-sm sm:text-base transition-colors duration-200"
               >
                 Update
               </button>
@@ -288,38 +290,40 @@ export default function PrivateBlogs() {
       )}
 
       {/* Blog List */}
-      <div className="space-y-6">
+      <div className="grid gap-4 sm:gap-6">
         {blogs.map((blog) => (
-          <article key={blog.id} className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
-            <div className="text-gray-600 mb-4 whitespace-pre-wrap">{blog.content}</div>
-            <div className="flex justify-between items-center text-sm text-gray-500">
-              <span>By {blog.authorName + " "}</span>
-              <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
-            </div>
-            <div className="mt-4 flex justify-end space-x-2">
-              <button
-                onClick={() => setEditingBlog(blog)}
-                className="px-3 py-1 text-blue-500 hover:text-blue-600"
-              >
-                Edit
-              </button>
-              <button
-                onClick={() => fnTogglePrivacy(blog)}
-                className={`px-3 py-1 cursor-pointer ${
-                  blog.isPrivate 
-                    ? 'text-pink-500 hover:text-pink-600' 
-                    : 'text-blue-500 hover:text-blue-600'
-                }`}
-              >
-                {blog.isPrivate ? 'Make Public' : 'Is Public'}
-              </button>
-              <button
-                onClick={() => fnHandleDeleteBlog(blog.id)}
-                className="px-3 py-1 text-red-500 hover:text-red-600"
-              >
-                X
-              </button>
+          <article key={blog.id} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+            <div className="p-4 sm:p-6">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800 line-clamp-2">{blog.title}</h3>
+              <div className="text-sm sm:text-base text-gray-600 mb-4 whitespace-pre-wrap line-clamp-3">{blog.content}</div>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs sm:text-sm text-gray-500 space-y-1 sm:space-y-0">
+                <span className="font-medium">By {blog.authorName}</span>
+                <span>{new Date(blog.createdAt).toLocaleDateString()}</span>
+              </div>
+              <div className="mt-4 flex flex-wrap justify-end gap-2">
+                <button
+                  onClick={() => setEditingBlog(blog)}
+                  className="px-3 py-1 text-blue-500 hover:text-blue-600 text-sm transition-colors duration-200"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => fnTogglePrivacy(blog)}
+                  className={`px-3 py-1 text-sm transition-colors duration-200 ${
+                    blog.isPrivate 
+                      ? 'text-pink-500 hover:text-pink-600' 
+                      : 'text-blue-500 hover:text-blue-600'
+                  }`}
+                >
+                  {blog.isPrivate ? 'Make Public' : 'Is Public'}
+                </button>
+                <button
+                  onClick={() => fnHandleDeleteBlog(blog.id)}
+                  className="px-3 py-1 text-red-500 hover:text-red-600 text-sm transition-colors duration-200"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </article>
         ))}

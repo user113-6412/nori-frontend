@@ -33,7 +33,7 @@ export default function HomeNavbar() {
             <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>
             <Link href="/why-us" className="text-gray-600 hover:text-gray-900">Why Us</Link>
             <Link href="/login" className="text-gray-600 hover:text-gray-900">Login</Link>
-            <Link href="/contact-us" className="text-gray-600 hover:text-gray-900">Contact</Link>
+      
           </div>
 
           {/* Mobile Menu Button */}
@@ -61,7 +61,7 @@ export default function HomeNavbar() {
               <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>
               <Link href="/why-us" className="text-gray-600 hover:text-gray-900">Why Us</Link>
               <Link href="/login" className="text-gray-600 hover:text-gray-900">Login</Link>
-              <Link href="/contact-us" className="text-gray-600 hover:text-gray-900">Contact</Link>
+            
             </div>
           </div>
         )}
