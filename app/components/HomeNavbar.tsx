@@ -27,12 +27,14 @@ export default function HomeNavbar() {
           <div className="hidden md:flex space-x-4">
             <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Tracker</Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900">Blog</Link>
-            <Link href="/how-its-made" className="text-gray-600 hover:text-gray-900">Process</Link>
-            <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">Source</Link>
             <Link href="/shop-nori" className="text-gray-600 hover:text-gray-900">Shop</Link>
             <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>
-            <Link href="/why-us" className="text-gray-600 hover:text-gray-900">Why Us</Link>
-            <Link href="/login" className="text-gray-600 hover:text-gray-900">Login</Link>
+            <Link href="/how-its-made" className="text-gray-600 hover:text-gray-900">How it&apos;s made</Link>
+            <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">How we source</Link>
+            <Link href="/why-us" className="text-gray-600 hover:text-gray-900">How we test</Link>
+            
+            
+          
       
           </div>
 
@@ -55,12 +57,14 @@ export default function HomeNavbar() {
             <div className="flex flex-col space-y-4 px-4">
               <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Tracker</Link>
               <Link href="/blog" className="text-gray-600 hover:text-gray-900">Blog</Link>
-              <Link href="/how-its-made" className="text-gray-600 hover:text-gray-900">Process</Link>
-              <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">Source</Link>
               <Link href="/shop-nori" className="text-gray-600 hover:text-gray-900">Shop</Link>
               <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>
-              <Link href="/why-us" className="text-gray-600 hover:text-gray-900">Why Us</Link>
-              <Link href="/login" className="text-gray-600 hover:text-gray-900">Login</Link>
+              <Link href="/how-its-made" className="text-gray-600 hover:text-gray-900">How it&apos;s made</Link>
+              <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">How we source</Link>
+              <Link href="/why-us" className="text-gray-600 hover:text-gray-900">How we test</Link>
+              
+              
+        
             
             </div>
           </div>
