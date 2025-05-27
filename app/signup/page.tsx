@@ -18,7 +18,7 @@ function SignupContent() {
     }
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-50">
+        <div className="flex flex-col items-center justify-center p-4 bg-gray-50">
             <div className="w-full max-w-md space-y-8 bg-white p-8 rounded-lg shadow-md">
                 <div className="text-center">
                     <h2 className="text-3xl font-bold text-gray-900">Create an account</h2>
