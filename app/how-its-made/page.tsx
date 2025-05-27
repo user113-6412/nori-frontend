@@ -3,7 +3,7 @@ export default function HowItsMade() {
     <main className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8 text-gray-800">How Our Nori is Made</h1>
       <div className="prose max-w-none space-y-8">
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">1. Growth Area Selection</h2>
           <p className="text-gray-600 leading-relaxed">
             Every year, we decide together with our roasting family in Gyeonggi-do from which area our Nori will come. Because the sea is an open environment, the cleanliness of it really depends on external pollution factors and industry as well as currents. It is important to check that no new polluting industrial plants has been erected upstream, for example.
@@ -16,63 +16,63 @@ export default function HowItsMade() {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">2. Growing</h2>
           <p className="text-gray-600 leading-relaxed">
             The Nori seedlings start their life on-shore until they are big enough to be placed to continue growing in the sea.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">3. Harvesting</h2>
           <p className="text-gray-600 leading-relaxed">
             The Nori is harvested on a small boat using a suction hose, which suctions water and filters out the Nori plants. Once the boat is full, it delivers the Nori to shore and pumps it back out.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">4. Washing</h2>
           <p className="text-gray-600 leading-relaxed">
             The freshly harvested Nori plants are immediately washed with fresh water to wash out the salt water and sand.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">5. Drying</h2>
           <p className="text-gray-600 leading-relaxed">
             The Nori is then pressed using a mechanical press into long sheets and dried at a low temperature.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">6. Packing and Grading</h2>
           <p className="text-gray-600 leading-relaxed">
             The Nori is then packed and inspected for quality and then sorted into grades by an experienced craftsman.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">7. Storage and Auction</h2>
           <p className="text-gray-600 leading-relaxed">
             The Nori is then repackaged after being sorted into grades, stored in freezers and then samples are taken to auction, where roasters evaluate and buy the best quality ones in a bidding process. The price of Nori is dependent on the quality and the harvest each year. As a natural product, this is difficult to predict and depends on the climate that year, nutrients, currents and many other factors.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">8. Roasting</h2>
           <p className="text-gray-600 leading-relaxed">
             The Nori roasters then collect the Nori they bought from the farmers&apos; freezers into their freezers, and take it in small batches to their roasting facilities. The Nori is cut into sheets roasted on a conveyor belt to perfection, as well as being inspected again for foreign bodies and quality.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">9. Packing</h2>
           <p className="text-gray-600 leading-relaxed">
             After being roasted, it is packaged, usually in vacuum packs with a silica pouch to prevent it absorbing humidity from the air, as it is such a dry product. Care needs to be taken to not break the Nori sheets during the process. At this point, the Nori is graded again by the roaster to their discretion.
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">10. Exporting and Lab Testing</h2>
           <p className="text-gray-600 leading-relaxed">
             If the Nori is exported abroad, it is packaged into cartons, placed onto a van and delivered to the sea or air port. At this point, when our Nori is exported from South Korea, it undergoes a rigorous regulatory inspection and compliance process by the Korean government to ensure it is suitable for human consumption.
