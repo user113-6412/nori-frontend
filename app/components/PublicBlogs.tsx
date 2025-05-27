@@ -20,7 +20,7 @@ export default function PublicBlogs({ initialBlogs }: PublicBlogsProps) {
   return (
     <section className="w-full min-h-screen">
       <div className="w-full max-w-4xl mx-auto px-1 sm:px-4">
-        <h1 className="text-3xl font-bold text-center mb-8">Nori Blog</h1>
+        <h1 className="text-3xl font-bold text-center mt-4 mb-8">Nori Blog</h1>
         
           
           {!initialBlogs.length ? (
