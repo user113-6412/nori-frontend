@@ -27,12 +27,12 @@ export default function PrivateBlogs() {
   
 
   useEffect(() => {
-    if (!user?.token) return; // Don't fetch if no token
+    if (!user || !user.token) return;
 
     async function fnFetchPrivateBlogs() {
       try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
-          credentials: 'include',
+          cache: 'no-store',
           headers: {
             'Authorization': `Bearer ${user?.token}`
           }

@@ -3,7 +3,7 @@ export default function About() {
     <main className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8 text-gray-800">About PureTide and Us</h1>
       <div className="prose max-w-none space-y-8">
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">18 February 2018</h2>
           <h3 className="text-xl font-semibold mb-4 text-gray-700">How We Discovered Nori</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -14,7 +14,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">21 March 2018</h2>
           <h3 className="text-xl font-semibold mb-4 text-gray-700">Our Search for &quot;Clean&quot; Nori, Guided By Tea</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -25,7 +25,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">11 April 2018</h2>
           <h3 className="text-xl font-semibold mb-4 text-gray-700">&quot;Clean&quot; Nori and South Korea</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -33,7 +33,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">5 July 2018</h2>
           <h3 className="text-xl font-semibold mb-4 text-gray-700">&quot;Clean&quot; Nori and Dadohaehaesang</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -44,7 +44,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">20 July 2018</h2>
           <h3 className="text-xl font-semibold mb-4 text-gray-700">The Birth of PureTide</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -52,7 +52,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg p-6 shadow-sm">
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">Present</h2>
           <h3 className="text-xl font-semibold mb-4 text-gray-700">How PureTide is Sourced</h3>
           <p className="text-gray-600 leading-relaxed">
