@@ -17,10 +17,10 @@ export default function Contact() {
           <p className="text-gray-600 leading-relaxed">
             Feel free to reach out to us at:{' '}
             <a 
-              href="mailto:hello@puretide.co.uk" 
+              href="mailto:fiasp1creations@gmail.com" 
               className="text-blue-600 hover:text-blue-800 underline"
             >
-              hello@puretide.co.uk
+              fiasp1creations@gmail.com
             </a>
           </p>
         </div>
