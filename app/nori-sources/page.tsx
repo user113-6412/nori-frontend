@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function NoriSources() {
     return (
         <main className="max-w-7xl mx-auto px-4 py-8">
@@ -26,6 +28,13 @@ export default function NoriSources() {
               Please note that the National Park of Dadohaehaesang has two locations – one in the middle of the Southern tip of South Korea and one to the West. We only source from the western side, as the Southern branch of the National Park is a completely different location and completely different story with regards to pollution. The Southern part of the National Park is very far away from the Western side and has a lithium factory being built, so this is certainly not where we source our Nori!
             </p>
           </div>
+
+        {/* Image of National Park of Dadohaehaesang */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/national-park.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
+        </div>
+
+
         </div>
       </main>
     );

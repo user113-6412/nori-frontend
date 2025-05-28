@@ -1,8 +1,10 @@
+import Image from "next/image"
+
 export default function HowItsMade() {
   return (
     <main className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8 text-gray-800">How Our Nori is Made</h1>
-      <div className="prose max-w-none space-y-8">
+      <div className="prose max-w-none space-y-4">
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">1. Growth Area Selection</h2>
           <p className="text-gray-600 leading-relaxed">
@@ -16,11 +18,23 @@ export default function HowItsMade() {
           </p>
         </div>
 
+        {/*1. Image of Growth Area */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/sourcing-area.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
+        </div>
+
+      
+
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">2. Growing</h2>
           <p className="text-gray-600 leading-relaxed">
             The Nori seedlings start their life on-shore until they are big enough to be placed to continue growing in the sea.
           </p>
+        </div>
+
+        {/*2. Image of growing */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/nori-cultivation.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
         </div>
 
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
@@ -30,11 +44,21 @@ export default function HowItsMade() {
           </p>
         </div>
 
+        {/*3. Image of harvesting */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/nori-harvesting.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
+        </div>
+
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">4. Washing</h2>
           <p className="text-gray-600 leading-relaxed">
             The freshly harvested Nori plants are immediately washed with fresh water to wash out the salt water and sand.
           </p>
+        </div>
+
+        {/* 4. Image of washing */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/nori-washing.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
         </div>
 
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
@@ -44,11 +68,21 @@ export default function HowItsMade() {
           </p>
         </div>
 
+        {/* 5. Image of drying */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/nori-drying.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
+        </div>
+
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-700">6. Packing and Grading</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-gray-700">6. Grading</h2>
           <p className="text-gray-600 leading-relaxed">
             The Nori is then packed and inspected for quality and then sorted into grades by an experienced craftsman.
           </p>
+        </div>
+
+        {/* 6. Image of packing and grading */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/nori-grading.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
         </div>
 
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
@@ -58,6 +92,11 @@ export default function HowItsMade() {
           </p>
         </div>
 
+        {/* 7. Image of storage and auction */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/storage-auction.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
+        </div>
+
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">8. Roasting</h2>
           <p className="text-gray-600 leading-relaxed">
@@ -65,11 +104,21 @@ export default function HowItsMade() {
           </p>
         </div>
 
+        {/* 8. Image of roasting */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/nori-roasting.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
+        </div>
+
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">9. Packing</h2>
           <p className="text-gray-600 leading-relaxed">
             After being roasted, it is packaged, usually in vacuum packs with a silica pouch to prevent it absorbing humidity from the air, as it is such a dry product. Care needs to be taken to not break the Nori sheets during the process. At this point, the Nori is graded again by the roaster to their discretion.
           </p>
+        </div>
+
+        {/* 9. Image of packing */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/vacuum-packing.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
         </div>
 
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
@@ -90,6 +139,12 @@ export default function HowItsMade() {
             When our family first started eating a lot of Nori on our plant-based journey, we were concerned about this, as no company was disclosing doing any testing, and this is how the company was born.
           </p>
         </div>
+
+        {/* 10. Image of exporting and lab testing */}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/final-testing.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
+        </div>
+        
       </div>
     </main>
   );
