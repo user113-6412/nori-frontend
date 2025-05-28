@@ -2,26 +2,52 @@ import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { AuthContextProvider } from "./context/AuthContext";
 import Script from 'next/script'
+import type { Metadata } from 'next'
 
 const quicksand = Quicksand({ subsets: ['latin'], weight: '600' });
 
-
-export const metadata = {
-  title: "PureTide Nori - Premium Sushi Nori Sheets & Iodine Tracker | Korean Seaweed",
+export const metadata: Metadata = {
+  title: {
+    default: 'PureTide Nori - Premium Sushi Nori Sheets & Iodine Tracker | Korean Seaweed',
+    template: '%s | PureTide Nori'
+  },
   description: "Discover premium Korean sushi nori sheets from clean waters. Track your iodine intake, explore nori recipes, and learn about our lab-tested, sustainably sourced seaweed. Available on Amazon.",
   keywords: "sushi nori, nori sheets, nori seaweed, sushi seaweed, korean nori, premium nori, clean nori, iodine tracker, nori recipes, lab tested nori, sustainable nori, dadohaehaesang nori, south korean nori",
+  authors: [{ name: 'PureTide Nori' }],
   openGraph: {
     title: "PureTide Nori - Premium Korean Sushi Nori Sheets",
     description: "Discover premium Korean sushi nori sheets from clean waters. Track your iodine intake, explore nori recipes, and learn about our lab-tested, sustainably sourced seaweed.",
     type: "website",
     locale: "en_GB",
     siteName: "PureTide Nori",
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'PureTide Nori - Premium Korean Sushi Nori Sheets'
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "PureTide Nori - Premium Korean Sushi Nori Sheets",
     description: "Discover premium Korean sushi nori sheets from clean waters. Track your iodine intake, explore nori recipes, and learn about our lab-tested, sustainably sourced seaweed.",
-  }
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification',
+  },
 };
 
 export default function RootLayout({
@@ -56,9 +82,29 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-XXXXXXX');`
+          }}
+        />
+
       </head>
       <body className={`${quicksand.className} antialiased`}>
         <AuthContextProvider>
+          {/* Google Tag Manager (noscript) */}
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
           {children}
         </AuthContextProvider>
       </body>
