@@ -1,6 +1,7 @@
 import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { AuthContextProvider } from "./context/AuthContext";
+import Script from 'next/script'
 
 const quicksand = Quicksand({ subsets: ['latin'], weight: '600' });
 
@@ -39,6 +40,22 @@ export default function RootLayout({
           crossOrigin="anonymous" 
           referrerPolicy="no-referrer" 
         />
+
+        {/* Google tag (gtag.js) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-17124083870" />
+        
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17124083870', {
+              'send_page_view': true,
+              'conversion_linker': true
+            });
+          `}
+        </Script>
+
       </head>
       <body className={`${quicksand.className} antialiased`}>
         <AuthContextProvider>
