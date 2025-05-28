@@ -48,8 +48,8 @@ export default function WhyUs() {
         </div>
 
         {/* Image of the lab test*/}
-        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400">
-          <Image src="/lab-test-report.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto max-w-[600px] mx-auto" />
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/lab-test-report.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
         </div>
 
       </div>
