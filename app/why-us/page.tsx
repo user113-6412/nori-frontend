@@ -5,6 +5,19 @@ export default function WhyUs() {
     <main className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8 text-gray-800">Why Choose PureTide</h1>
       <div className="prose max-w-none space-y-6">
+
+        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
+          <h2 className="text-2xl font-semibold mb-4 text-gray-700">Lab Tested</h2>
+          <p className="text-gray-600 leading-relaxed">
+            We test every batch in a 3rd party lab to ensure the lowest possible levels of contaminants, such as heavy metals. We also regularly test for radioactivity and pesticides and carry out 3rd party Quality inspections. Every batch of our Nori is also checked by the Korean Ministry of Food and Drug Safety and undergoes a Sanitary Inspection at random, as well as regularly being checked by the laboratories at the import customs of the EU.
+          </p>
+        </div>
+        
+        {/* Image of the lab test*/}
+        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
+          <Image src="/lab-test-report.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
+        </div>
+
         <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">South Korean Quality</h2>
           <p className="text-gray-600 leading-relaxed">
@@ -40,17 +53,9 @@ export default function WhyUs() {
           </p>
         </div>
 
-        <div className="bg-gray-100 rounded-lg p-6 shadow-sm border border-gray-400">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-700">Lab Tested</h2>
-          <p className="text-gray-600 leading-relaxed">
-            We test every batch in a 3rd party lab to ensure the lowest possible levels of contaminants, such as heavy metals. We also regularly test for radioactivity and pesticides and carry out 3rd party Quality inspections. Every batch of our Nori is also checked by the Korean Ministry of Food and Drug Safety and undergoes a Sanitary Inspection at random, as well as regularly being checked by the laboratories at the import customs of the EU.
-          </p>
-        </div>
 
-        {/* Image of the lab test*/}
-        <div className="bg-gray-100 rounded-lg p-2 shadow-sm border border-gray-400 max-w-[600px] mx-auto">
-          <Image src="/lab-test-report.svg" width={700} height={900} alt="Lab Test" className="w-full h-auto" />
-        </div>
+
+
 
       </div>
     </main>
