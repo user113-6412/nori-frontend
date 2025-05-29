@@ -25,18 +25,16 @@ export default function HomeNavbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex space-x-4">
-            <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Tracker</Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900">Blog</Link>
             <Link href="/shop-nori" className="text-gray-600 hover:text-gray-900">Shop</Link>
             <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>
-            <Link href="/board" className="text-gray-600 hover:text-gray-900">Board</Link>
+            <Link href="/board" className="text-gray-600 hover:text-gray-900">My Board</Link>
+            
             <Link href="/how-its-made" className="text-gray-600 hover:text-gray-900">How it&apos;s made</Link>
-            <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">Sourcing</Link>
+            <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">How we source</Link>
             <Link href="/why-us" className="text-gray-600 hover:text-gray-900">How we test</Link>
+            <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Iodine Tracker</Link>
             
-            
-          
-      
           </div>
 
           {/* Mobile Menu Button */}
@@ -56,14 +54,15 @@ export default function HomeNavbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-[120px] left-0 w-full bg-white shadow-lg py-4">
             <div className="flex flex-col space-y-4 px-4">
-              <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Tracker</Link>
+              
               <Link href="/blog" className="text-gray-600 hover:text-gray-900">Blog</Link>
               <Link href="/shop-nori" className="text-gray-600 hover:text-gray-900">Shop</Link>
               <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>
-              <Link href="/board" className="text-gray-600 hover:text-gray-900">Board</Link>
+              <Link href="/board" className="text-gray-600 hover:text-gray-900">My Board</Link>
               <Link href="/how-its-made" className="text-gray-600 hover:text-gray-900">How it&apos;s made</Link>
-              <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">Sourcing</Link>
+              <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">How we source</Link>
               <Link href="/why-us" className="text-gray-600 hover:text-gray-900">How we test</Link>
+              <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Iodine Tracker</Link>
               
               
         
