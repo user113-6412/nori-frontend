@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../authHooks/useAuthContext';
+import Link from 'next/link';
 
 interface IntakeData {
   [year: string]: {
@@ -260,6 +261,7 @@ export default function NoriTracker() {
     return (
       <div className="text-center text-xl">
         <h3 className="text-xl">Please log in to track your nori intake.</h3>
+        <Link href="/login" className="text-blue-500">Login</Link>
       </div>
     );
   }
