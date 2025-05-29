@@ -5,7 +5,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 export default function TypewriterText(): React.ReactElement {
   const [text] = useTypewriter({
-    words: ["Eat Nori", "Spread Love", "Laugh a Lot"],
+    words: ["Lab Tested", "South Korean", "Clean Waters"],
     loop: true, // Optional config    
     typeSpeed: 40,
     deleteSpeed: 40,
