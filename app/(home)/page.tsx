@@ -21,11 +21,17 @@ export default function Home() {
                 <Image src="/sushi-nori-image.webp" alt="Nori" width={670} height={100} className='mx-auto border-2 border-yellow-500 rounded-lg'/>
             </div>
 
-            {/* Amazon Link Button */}
+
+            {/* Lab test tmage */}
+            <div className="flex justify-center py-2">
+                <Image src="/lab-test-report.svg" alt="Nori" width={670} height={100} className='mx-auto border-2 border-yellow-500 rounded-lg'/>
+            </div>
+
+            {/* Shop online link button */}
             <div className="max-w-2xl mx-auto w-full py-2">
                 <Link href="/shop-nori">
                     <button className="w-full text-2xl font-bold text-white p-4 rounded-lg bg-yellow-500 hover:cursor-pointer">
-                        Buy our Nori Online!
+                        Buy our Nori Online
                     </button>
                 </Link>
             </div>
