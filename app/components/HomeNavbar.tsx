@@ -29,11 +29,11 @@ export default function HomeNavbar() {
             <Link href="/shop-nori" className="text-gray-600 hover:text-gray-900">Shop</Link>
             <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>
             <Link href="/board" className="text-gray-600 hover:text-gray-900">My Board</Link>
-            
+            <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Iodine Tracker</Link>
             <Link href="/how-its-made" className="text-gray-600 hover:text-gray-900">How it&apos;s made</Link>
             <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">How we source</Link>
             <Link href="/why-us" className="text-gray-600 hover:text-gray-900">How we test</Link>
-            <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Iodine Tracker</Link>
+            
             
           </div>
 
@@ -59,10 +59,11 @@ export default function HomeNavbar() {
               <Link href="/shop-nori" className="text-gray-600 hover:text-gray-900">Shop</Link>
               <Link href="/about-us" className="text-gray-600 hover:text-gray-900">About</Link>
               <Link href="/board" className="text-gray-600 hover:text-gray-900">My Board</Link>
+              <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Iodine Tracker</Link>
               <Link href="/how-its-made" className="text-gray-600 hover:text-gray-900">How it&apos;s made</Link>
               <Link href="/nori-sources" className="text-gray-600 hover:text-gray-900">How we source</Link>
               <Link href="/why-us" className="text-gray-600 hover:text-gray-900">How we test</Link>
-              <Link href="/nori-tracker" className="text-gray-600 hover:text-gray-900">Iodine Tracker</Link>
+              
               
               
         
