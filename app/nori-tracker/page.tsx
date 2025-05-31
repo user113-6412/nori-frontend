@@ -259,9 +259,9 @@ export default function NoriTracker() {
 
   if (!user) {
     return (
-      <div className="text-center text-xl">
-        <h3 className="text-xl">Please log in to track your nori intake.</h3>
-        <Link href="/login" className="text-blue-500">Login</Link>
+      <div className="min-h-screen text-center text-xl">
+        <h3 className="text-xl mt-3 mb-3">Please log in to track your nori intake.</h3>
+        <Link href="/login" className="text-blue-600">Login</Link>
       </div>
     );
   }
