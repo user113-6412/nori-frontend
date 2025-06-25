@@ -11,6 +11,15 @@ export default function Home() {
     return (
         <main className="min-h-screen p-3">
 
+            <div className="flex flex-col justify-center items-center py-2">
+                <h1 className='mt-2 text-4xl font-bold text-center'>
+                    Sushi Nori Seaweed Sheets, Premium Gold Grade
+                </h1>
+                <p className='text-gray-500 text-xl mt-3 text-center'>
+                    Sourcing, curating, and testing highly nutritious and delicious seaweed sheets from prestine waters of Dadohaesan National Park, South Korea.
+                </p>
+            </div>
+
             {/* Typewriter Component */}
             <div className="max-w-2xl mx-auto space-y-2">
                 <TypewriterText />
