@@ -27,7 +27,7 @@ export function useSignUp() {
 
             if (!response.ok) {
                 setIsLoading(false);
-                setError(json.error);
+                setError(json.message || 'An error occurred');
                 return;
             }
 
