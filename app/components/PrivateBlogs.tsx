@@ -156,7 +156,7 @@ export default function PrivateBlogs() {
 
   return (
     <section className="w-full">
-      <div className="w-full max-w-4xl mx-auto px-1 sm:px-4">
+      <div className="w-full min-h-screen max-w-4xl mx-auto px-1 sm:px-4">
         <div className="space-y-6 sm:space-y-8">
           {/* Create New Blog Button or Login Button */}
           <div className="flex justify-center">
